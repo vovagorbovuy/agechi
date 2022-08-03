@@ -1,0 +1,26 @@
+/* ====================
+# FONTS
+==================== */
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@mixin font-face($font-family, $file-name, $file-path, $weight, $style: normal) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+		src: url('#{$file-path}.eot');
+		src: local('#{$file-name}'),
+		url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+		url('#{$file-path}.woff') format('woff'),
+		url('#{$file-path}.ttf') format('truetype');
+	}
+}
+$f_family: 'Circular';
+$f_path: '../fonts/';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+$font : 'Noto Sans';

@@ -1,0 +1,26 @@
+body {
+    background-color: $dark;
+    color: $light-grey;
+}
+
+.site-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+strong,
+i,
+span {
+    font-family: $font;
+}

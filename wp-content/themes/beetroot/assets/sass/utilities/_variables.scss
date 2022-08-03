@@ -1,0 +1,12 @@
+$dark: rgba(18, 18, 18, 0.9);
+$dark-grey: #1D1D1D;
+$gold-title: #947216;
+$dark-gold: #A9883A;
+$dark-gold-gradient: #A9883A;
+$gold: #E6C875;
+$light: #EAEAEA;
+$light-grey: #F1F1F1;
+$grey: #4A4A4A;
+$white: #fff;
+$light-gold-gradient: linear-gradient(90deg, $dark-gold 0%, #F6EE97 38.26%, #F6EE97 40.71%, #F6EE97 40.89%, #CBAB57 76.57%, $gold 92.43%, #D4B158 100%);
+$gold-gradient: $light-gold-gradient, linear-gradient(90deg, #FFDA4E 0.03%, #EDBA29 32%, #D8A517 68.03%, #F6BE21 100%), $white;
