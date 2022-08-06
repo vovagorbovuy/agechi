@@ -17,10 +17,34 @@ function beetroot_enqueue_scripts() {
 	// wp_localize_script( 'theme-js', 'snk_ajax_params', array(
 	// 	'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
 	// ) );
-	// wp_enqueue_script( 'theme-js' );
+	wp_enqueue_script( 'theme-js' );
+}
+
+/* -- register acf block -- */
+add_action('acf/init', 'my_acf_init_block_types');
+function my_acf_init_block_types() {
+
+    // Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+
+        acf_register_block_type(array(
+            'name'              => 'banner',
+            'title'             => __('Banner'),
+            'description'       => __('A custom banner block.'),
+            'render_template'   => 'template-parts/blocks/banner.php',
+            'category'          => 'design',
+            'icon'              => 'align-full-width',
+            'keywords'          => array( 'banner', 'quote' ),
+        ));
+    }
 }
 
 /* -- register menus -- */
 register_nav_menus( array(
 	'main_menu' => 'Main Navigation',
 ) );
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/templates/template-tags.php';

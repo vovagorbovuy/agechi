@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Beetroot
+ * @package beetroot
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
