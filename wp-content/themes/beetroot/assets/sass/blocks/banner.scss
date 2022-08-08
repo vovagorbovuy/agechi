@@ -1,12 +1,54 @@
-.banner {
-    .banner-blockquote {
-        .banner-content {
-            text-align: center;
+.home {
+    .home-blockquote {
+        .home-content {
+            max-width: 840px;
+            margin: auto;
+            position: relative;
             h1 {
+                z-index: 4;
                 max-width: 840px;
+                margin: 25vh 0 0 0;
+                position: relative;
+            }
+            .snake,
+            .blurball,
+            .yellowball,
+            .figures {
+                position: absolute;
+            }
+            .snake {
+                top: 0;
+                left: 0;
+                z-index: 6;
+                top: 70px;
+                left: -600px;
+                width: 855px;
+                height: 400px;
+            }
+            .yellowball {
+                top: 185px;
+                left: -276px;
+                z-index: 7;
+                width: 480px;
+                height: 480px;
+            }
+            .blurball {
+                z-index: 3;
+                width: 458px;
+                height: 458px;
+                right: -225px;
+                top: -165px;
+            }
+            .figures {
+                z-index: 3;
+                right: -300px;
             }
             p {
                 max-width: 484px;
+                margin: auto;
+                text-align: center;
+                position: relative;
+                z-index: 7;
             }
         }
     }

@@ -11,10 +11,20 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-
-		</div><!-- .site-info -->
+	<footer id="colophon" class="footer container">
+		<div class="footer-info col-6">
+			<div class="footer-contact">
+				<div class="info-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17"><text id="_" data-name="" transform="translate(0 13)" fill="#36299a" font-size="16" font-family="LastResort, '\.LastResort'"><tspan x="0" y="0"></tspan></text></svg>
+				</div>
+				<div class="info-email"><p><?php pll_e('Email:'); ?></p><a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a></div>
+			</div>
+			<div class="info-copyright"><p><?php pll_e('©Copyright 2020. Made by moontheme'); ?></p></div>
+		</div>
+		<div class="navigation col-6">
+			<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+			<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_dgajiyer.json"  background="transparent"  speed="1"  style="width: 24px; height: 24px;"  loop  autoplay></lottie-player>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

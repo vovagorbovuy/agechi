@@ -1,0 +1,16 @@
+.touch {
+    font-size: 16px;
+    line-height: 18px;
+    font-style: normal;
+    padding: 16px 50px;
+    color: $violet;
+    border: 1px solid $grey;
+    border-radius: 22px;
+    background: transparent;
+    transition: all .3s;
+    &:hover {
+        color: $white;
+        border-color: $orange;
+        background: $orange;
+    }
+}

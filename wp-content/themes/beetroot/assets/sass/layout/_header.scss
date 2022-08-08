@@ -1,34 +1,36 @@
 #masthead {
-    position: absolute;
-    top: 0;
+    z-index: 10;
+    top: 60px;
+    position: fixed;
     left: 0;
     right: 0;
-    background-color: transparent;
-    padding: 15px;
-    transition: .4s;
-    &.sticky {
-        position: fixed;
-        top: 0;
-    }
-    &.sticky-up {
-        top: -200px;
-    }
-    .wrapper {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .branding {
-        display: flex;
-        align-items: center;
-    }
-    .custom-logo-link {
-        display: inline-block;
-        width: 100%;
-        max-width: 120px;
-        margin-right: 25px;
+        justify-content: center;
+        gap: 50px;
+        padding-left: 0;
+        margin-bottom: 0;
+        text-align: center;
+        li {
+            list-style-type: none;
+            a {
+                transition: all .3s;
+                text-decoration: unset;
+                color: $dark;
+                font-size: 15px;
+                line-height: 15px;
+                font-style: normal;
+                &:hover {
+                    transition: all .3s;
+                    color: $orange;
+                }
+            }
+            .active {
+                color: $orange !important;
+            }
+        }
     }
 }

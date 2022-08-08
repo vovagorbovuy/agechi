@@ -1,0 +1,31 @@
+.about {
+    .about-blockquote {
+        .container {
+            .about-content {
+                display: flex;
+                padding-top: 18vh;
+                h3,
+                p {
+                    max-width: 496px;
+                }
+                p {
+                    font-size: 15px;
+                    line-height: 30px;
+                    color: $d-grey;
+                    margin: 17px 0;
+                }
+                .partners {
+                    padding-top: 29px;
+                    display: flex;
+                    p {
+                        font-size: 14px;
+                        font-weight: 500;
+                        max-width: 135px;
+                        line-height: 16px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

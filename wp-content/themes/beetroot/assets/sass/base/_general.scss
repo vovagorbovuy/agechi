@@ -2,10 +2,52 @@ body {
     background-color: $pink;
 }
 
-.site-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
+.entry-content {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    section {
+        scroll-snap-align: start;
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+blockquote {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.col-1 {
+    flex-basis: 8.333%;
+}
+
+.col-2 {
+    flex-basis: 16.666%;
+}
+
+.col-3 {
+    flex-basis: 25%;
+}
+
+.col-4 {
+    flex-basis: 33.333%;
+}
+
+.col-5 {
+    flex-basis: 41.666%;
+}
+
+.col-6 {
+    flex-basis: 50%;
+}
+
+.col-7 {
+    flex-basis: 50%;
 }
 
 h1,
@@ -20,6 +62,7 @@ ul,
 ol,
 strong,
 i,
-span {
+span,
+.btn {
     font-family: $font;
 }

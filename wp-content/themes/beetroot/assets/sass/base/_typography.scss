@@ -5,6 +5,20 @@ h1 {
     font-weight: bold;
 }
 
+h3 {
+    color: $dark;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 600;
+}
+
+h4 {
+    color: $violet;
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 300;
+}
+
 p {
     color: $dark;
     font-size: 18px;
