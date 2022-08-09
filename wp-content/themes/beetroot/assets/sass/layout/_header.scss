@@ -7,6 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .header-logo {
+        min-width: 356px;
+    }
     .menu {
         display: flex;
         justify-content: center;
@@ -30,6 +33,34 @@
             }
             .active {
                 color: $orange !important;
+            }
+        }
+    }
+    .header-lan {
+        display: flex;
+        align-items: flex-end;
+        gap: 50px;
+        min-width: 356px;
+        ul {
+            margin: unset;
+            padding-left: 0;
+            margin-bottom: 0;
+            display: flex;
+            gap: 5px;
+            li {
+                list-style-type: none;
+                img,
+                svg {
+                    width: 32px;
+                    height: 32px;
+                    border: 1px solid transparent;
+                    border-radius: 50%;
+                    transition: all .3s;
+                    &:hover {
+                        border-color: orange;
+                        opacity: 0.7;
+                    }
+                }
             }
         }
     }

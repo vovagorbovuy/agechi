@@ -32,6 +32,7 @@ include_once('includes/theme/acf-helpers.php'); //register acf block
 add_action('init', function() {
 	pll_register_string('beetroot', 'Get in touch');
     pll_register_string('beetroot', 'Email:');
+	pll_register_string('beetroot', 'Stay connected With Us');
     pll_register_string('beetroot', '©Copyright 2020. Made by moontheme');
 	pll_register_string('beetroot', 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida risus commodos');
   });

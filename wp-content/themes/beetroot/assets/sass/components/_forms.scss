@@ -5,22 +5,170 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    .modal-content {
-        background-color: $d-grey;
-        width: 100%;
-        height: 100vh;
+    height: 100vh;
+    background-color: $pink;
+    .green-lines,
+    .yellow-red-ball,
+    .blurball {
+        position: absolute;
+    }
+    .green-lines {
+        top: 20vh;
+        right: -350px;
+    }
+    .yellow-red-ball {
+        bottom: -220px;
+        left: 100px;
+    }
+    .blurball {
+        top: -150px;
+        left: 350px;
+    }
+    .modal-header {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
         .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+            padding: 18px 20px 15px;
+            border: 1px solid $grey;
+            border-radius: 22px;
+            transition: all .3s;
             cursor: pointer;
+            &:hover {
+                path {
+                    fill: $orange;
+                }
+            }
+        }
+    }
+    .modal-content {
+        display: flex;
+        padding-top: 16vh;
+        h3 {
+            margin: unset;
+        }
+        .modal-contact-form {}
+        .modal-contact-info {
+            .modal-contact-content {
+                width: max-content;
+                margin: auto;
+                h3 {
+                    margin-bottom: 50px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+                .modal-tel {
+                    color: $dark;
+                    text-decoration: none;
+                    &:hover {
+                        color: $orange;
+                        text-decoration: underline;
+                    }
+                }
+                .modal-email {
+                    margin: 17px 0 0;
+                    a {
+                        font-size: 24px;
+                        line-height: 26px;
+                        font-weight: bold;
+                        color: $orange;
+                        transition: all .3s;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
+                }
+                .modal-social-networks {
+                    margin-top: 50px;
+                    display: flex;
+                    gap: 14px;
+                    .social-item {
+                        a {
+                            display: inline-block;
+                            padding: 16px 17px 14px;
+                            background: $white;
+                            border-radius: 20px;
+                            transition: all .3s;
+                            &:hover {
+                                background: $violet;
+                                box-shadow: 14px 23px 24px #0000001C;
+                                svg {
+                                    text {
+                                        fill: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wpcf7 {
+    .wpcf7-form {
+        p {
+            margin: unset;
+        }
+        .wpcf7-not-valid-tip {
+            position: absolute;
+            font-size: 13px;
+            line-height: 15px;
+            color: #801515;
+            margin-top: 5px;
+        }
+        .wpcf7-response-output {
+            border: unset;
+            position: absolute;
+            margin: 10px 0 0;
+            padding: unset;
+            color: #801515;
+        }
+        label {
+            position: relative;
+            input,
+            textarea {
+                width: 100%;
+                max-width: 418px;
+                background: transparent;
+                border: unset;
+                border-bottom: 1px solid #E1E1E1;
+                padding: 15px 0;
+                color: #898989;
+                font-family: $font;
+                font-weight: normal;
+                font-size: 15px;
+                line-height: 17px;
+                &:focus-visible {
+                    border-color: unset;
+                }
+            }
+            textarea {
+                height: 100px;
+                overflow: hidden;
+                resize: none;
+            }
+        }
+        input[type="submit"] {
+            margin-top: 50px;
+            padding: 16px 50px;
+            color: $white;
+            border: 1px solid $orange;
+            border-radius: 22px;
+            transition: all .3s;
+            background: $orange;
+            font-size: 16px;
+            line-height: 18px;
+            font-style: normal;
+            cursor: pointer;
+            &:hover {
+                color: $orange;
+                background: transparent;
+                border-color: $orange;
+            }
         }
     }
 }
