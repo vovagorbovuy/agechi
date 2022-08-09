@@ -22,13 +22,29 @@ for (let anchor of anchors) {
             var bottom = top + $(el).height();
             var scroll = $(window).scrollTop();
             var id = $(el).attr('id');
-            console.log(id);
             if (scroll > top && scroll < bottom) {
                 $('a.active').removeClass('active');
                 $('a[href="#' + id + '"]').addClass('active');
 
             }
         })
+    });
+
+    //Slick
+    $('.multiple-jobs').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '.arrow_prev',
+        nextArrow: '.arrow_next',
+    });
+
+    $('.multiple-teams').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '.arrow_prev',
+        nextArrow: '.arrow_next',
     });
 
 })(jQuery);

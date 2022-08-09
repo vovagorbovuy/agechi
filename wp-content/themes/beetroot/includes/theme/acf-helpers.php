@@ -99,6 +99,54 @@ function beetroot_register_acf_block_types() {
 			// },
 			// 'post_types'			=> array('post', 'page'),
 		),
+		array(
+			'name'						=> ($name = 'jobs'),
+			'title'						=> __('Jobs', 'beetroot'),
+			'description'			=> __('Jeams Block Template.','beetroot'),
+			'category'				=> 'acf-blocks',
+			'icon'						=> 'nametag',
+			'mode'						=> 'preview',
+			'supports'				=> array( 'align' => false ),
+			'render_callback' => 'beetroot_render_block_thumbnail',
+			'example' => [
+				'attributes' => [
+					'mode' => 'preview',
+					'data' => [
+						'is_example' => true, 
+						'thumb' => $thumb_url.$name.'.png'
+					],
+				]
+			],
+			// 'enqueue_assets' => function() use($name, $assets_url) {
+			// 	wp_enqueue_style( $name, $assets_url.$name.'.css', array(),'', false);
+			// 	wp_enqueue_script( $name, $assets_url.$name.'.js', array(),'',true);
+			// },
+			// 'post_types'			=> array('post', 'page'),
+		),
+		array(
+			'name'						=> ($name = 'teams'),
+			'title'						=> __('Teams', 'beetroot'),
+			'description'			=> __('Teams Block Template.','beetroot'),
+			'category'				=> 'acf-blocks',
+			'icon'						=> 'groups',
+			'mode'						=> 'preview',
+			'supports'				=> array( 'align' => false ),
+			'render_callback' => 'beetroot_render_block_thumbnail',
+			'example' => [
+				'attributes' => [
+					'mode' => 'preview',
+					'data' => [
+						'is_example' => true, 
+						'thumb' => $thumb_url.$name.'.png'
+					],
+				]
+			],
+			// 'enqueue_assets' => function() use($name, $assets_url) {
+			// 	wp_enqueue_style( $name, $assets_url.$name.'.css', array(),'', false);
+			// 	wp_enqueue_script( $name, $assets_url.$name.'.js', array(),'',true);
+			// },
+			// 'post_types'			=> array('post', 'page'),
+		),
 	);
 
 	foreach ($blocks as $block) {

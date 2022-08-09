@@ -1,0 +1,54 @@
+.teams {
+    background: url('../img/line-decoration-teams.svg') no-repeat;
+    background-size: auto;
+    background-position-y: center;
+    .teams-blockquote {
+        .teams-title {
+            margin-top: 16vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .control-panel {
+                display: flex;
+                gap: 30px;
+                .arrow_prev,
+                .arrow_next {
+                    transition: all .3s;
+                    cursor: pointer;
+                    &:hover {
+                        transition: all .3s;
+                        path {
+                            fill: $orange;
+                        }
+                    }
+                }
+            }
+        }
+        .teams-content {
+            .slick-track {
+                display: flex;
+                .teams-item {
+                    text-align: center;
+                    &:nth-child(1),
+                    &:nth-child(3),
+                    &:nth-child(5) {
+                        margin-top: 100px;
+                    }
+                    p {
+                        color: $orange;
+                        font-size: 14px;
+                        line-height: 15px;
+                        margin: unset;
+                        margin-top: 32px;
+                    }
+                    h4 {
+                        font-weight: 600;
+                        margin: unset;
+                        margin-top: 10px;
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

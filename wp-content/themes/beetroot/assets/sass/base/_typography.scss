@@ -5,10 +5,17 @@ h1 {
     font-weight: bold;
 }
 
-h3 {
+h2 {
     color: $dark;
     font-size: 48px;
     line-height: 60px;
+    font-weight: 600;
+}
+
+h3 {
+    color: $violet;
+    font-size: 36px;
+    line-height: 38px;
     font-weight: 600;
 }
 
