@@ -46,7 +46,7 @@ $vacancy = get_field('jobs_vacancy');
                         <p><?php echo $vacancy; ?></p>
                         <h4><?php echo $title; ?></h4>
                         <?php if($count == 2 || $count == 4 || $count == 6): ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g id="button_view_project" data-name="button view project" transform="translate(-931 -769)"><rect id="bg" width="50" height="50" rx="20" transform="translate(931 769)" fill="#fff"/><path id="view" d="M955,802v-7h-7v-2h7v-7h2v7h7v2h-7v7Z"/></g></svg>
+                           <div class="jobs-item-plus"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g id="button_view_project" data-name="button view project" transform="translate(-931 -769)"><rect id="bg" width="50" height="50" rx="20" transform="translate(931 769)" fill="#fff"/><path id="view" d="M955,802v-7h-7v-2h7v-7h2v7h7v2h-7v7Z"/></g></svg></div>
                         <?php endif ?>
                     </div>
                 <?php endforeach ?>

@@ -15,29 +15,8 @@ function beetroot_enqueue_scripts() {
 	wp_enqueue_script('jquery', false, false, true);
 	wp_register_script( 'slick', get_template_directory_uri() . '/dist/vendor/js/slick.min.js', array('jquery'), '1.0.0', true );
 	wp_register_script( 'theme-js', get_template_directory_uri() . '/dist/js/custom.min.js', array('slick'), '1.0.0', true );
-	// wp_localize_script( 'theme-js', 'snk_ajax_params', array(
-	// 	'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-	// ) );
 	wp_enqueue_script( 'theme-js' );
 }
-
-/* -- register acf block -- */
-// add_action('acf/init', 'my_acf_init_block_types');
-// function my_acf_init_block_types() {
-
-//     if( function_exists('acf_register_block_type') ) {
-
-//         acf_register_block_type(array(
-//             'name'              => 'banner',
-//             'title'             => __('Banner'),
-//             'description'       => __('A custom banner block.'),
-//             'render_template'   => 'template-parts/blocks/banner.php',
-//             'category'          => 'design',
-//             'icon'              => 'align-full-width',
-//             'keywords'          => array( 'banner', 'quote' ),
-//         ));
-//     }
-// }
 
 /* -- register menus -- */
 register_nav_menus( array(
@@ -54,23 +33,21 @@ add_action('init', function() {
 	pll_register_string('beetroot', 'Get in touch');
     pll_register_string('beetroot', 'Email:');
     pll_register_string('beetroot', '©Copyright 2020. Made by moontheme');
+	pll_register_string('beetroot', 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida risus commodos');
   });
 
-
-function my_custom_mime_types( $mimes ) {
- 
 // New allowed mime types.
+add_filter( 'upload_mimes', 'my_custom_mime_types' );
+function my_custom_mime_types( $mimes ) {
 $mimes['svg'] = 'image/svg+xml';
 $mimes['svgz'] = 'image/svg+xml';
 $mimes['doc'] = 'application/msword';
- 
-// Optional. Remove a mime type.
 unset( $mimes['exe'] );
- 
 return $mimes;
 }
-add_filter( 'upload_mimes', 'my_custom_mime_types' );
 
+//ACF bug fix (blocks)
+add_filter( 'block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1 );
 function acf_filter_rest_api_preload_paths( $preload_paths ) {
 	global $post;
 	$rest_path    = rest_get_route_for_post( $post );
@@ -86,4 +63,3 @@ function acf_filter_rest_api_preload_paths( $preload_paths ) {
 		}
 	);
 }
-add_filter( 'block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1 );

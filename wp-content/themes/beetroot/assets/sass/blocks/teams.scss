@@ -11,8 +11,8 @@
             .control-panel {
                 display: flex;
                 gap: 30px;
-                .arrow_prev,
-                .arrow_next {
+                .arrow_prev_t,
+                .arrow_next_t {
                     transition: all .3s;
                     cursor: pointer;
                     &:hover {
@@ -46,6 +46,13 @@
                         margin: unset;
                         margin-top: 10px;
                         margin-bottom: 24px;
+                    }
+                    .about-team {
+                        font-size: 15px;
+                        line-height: 17px;
+                        color: $d-grey;
+                        max-width: 464px;
+                        margin: 0 auto;
                     }
                 }
             }

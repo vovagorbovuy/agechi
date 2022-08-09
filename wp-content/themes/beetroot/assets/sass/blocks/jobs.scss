@@ -47,6 +47,11 @@
                         margin-top: 10px;
                         margin-bottom: 24px;
                     }
+                    .jobs-item-plus {
+                        svg {
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
         }

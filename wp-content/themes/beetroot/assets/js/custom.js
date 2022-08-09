@@ -43,8 +43,24 @@ for (let anchor of anchors) {
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 3,
-        prevArrow: '.arrow_prev',
-        nextArrow: '.arrow_next',
+        prevArrow: '.arrow_prev_t',
+        nextArrow: '.arrow_next_t',
     });
+
+    // Popup
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("touch");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
 })(jQuery);

@@ -38,7 +38,7 @@ $solutions_items = get_field('about_solutions_items');
                 <div class="col-2">
                     <h4><?php echo $title; ?></h4>
                 </div>
-                <div class="col-5">
+                <div class="col-5 description">
                     <h2><?php echo $subtitle; ?></h2>
                     <?php echo $text; ?>
                     <div class="partners">

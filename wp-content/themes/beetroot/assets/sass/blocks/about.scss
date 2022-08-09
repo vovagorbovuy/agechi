@@ -21,10 +21,10 @@
             .about-content {
                 display: flex;
                 padding-top: 18vh;
-                h3,
-                p {
+                .description>* {
                     max-width: 496px;
                 }
+                h3,
                 p {
                     font-size: 15px;
                     line-height: 30px;
