@@ -181,6 +181,7 @@ sup {
 
 img,
 svg {
+    direction: ltr !important;
     border-style: none;
     width: auto;
     height: auto;

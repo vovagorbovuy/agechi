@@ -23,7 +23,7 @@ $title = get_field('home-title');
 $subtitle = get_field('home-subtitle');
 
 ?>
-<section id="<?php echo esc_attr($className); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($className); ?>-1" class="<?php echo esc_attr($className); ?> section">
     <blockquote class="home-blockquote">
         <div class="container">
             <div class="home-content">

@@ -35,6 +35,9 @@
                     color: $orange;
                     font-size: 16px;
                     line-height: 16px;
+                    &:hover {
+                        opacity: 0.7;
+                    }
                 }
             }
         }

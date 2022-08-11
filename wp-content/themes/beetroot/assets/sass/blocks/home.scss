@@ -4,10 +4,11 @@
             max-width: 840px;
             margin: auto;
             position: relative;
+            text-align: center;
             h1 {
                 z-index: 4;
                 max-width: 840px;
-                margin: 25vh 0 0 0;
+                margin: -10vh 0 0 0;
                 position: relative;
             }
             .snake,
@@ -46,7 +47,6 @@
             p {
                 max-width: 484px;
                 margin: auto;
-                text-align: center;
                 position: relative;
                 z-index: 7;
             }

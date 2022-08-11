@@ -23,7 +23,7 @@ $title = get_field('teams_title');
 $teams = get_field('teams_rpt');
 
 ?>
-<section id="<?php echo esc_attr($className); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($className); ?>-1" class="<?php echo esc_attr($className); ?> section">
     <blockquote class="teams-blockquote">
         <div class="container">
             <div class="teams-title">

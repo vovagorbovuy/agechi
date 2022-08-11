@@ -28,7 +28,7 @@ $solutions_title = get_field('about_solutions_title');
 $solutions_items = get_field('about_solutions_items');
 
 ?>
-<section id="<?php echo esc_attr($className); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($className); ?>-1" class="<?php echo esc_attr($className); ?> section">
     <blockquote class="about-blockquote">
         <img class="blurball" src="<?= get_template_directory_uri(); ?>/assets/img/blurball.png" alt="blurball.png" />
         <img class="green-line" src="<?= get_template_directory_uri(); ?>/assets/img/green-line.png" alt="green-line.png" />

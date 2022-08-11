@@ -23,7 +23,7 @@ $title = get_field('jobs_title');
 $vacancy = get_field('jobs_vacancy');
 
 ?>
-<section id="<?php echo esc_attr($className); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($className); ?>-1" class="<?php echo esc_attr($className); ?> section">
     <blockquote class="jobs-blockquote">
         <div class="container">
             <div class="jobs-title">
@@ -34,22 +34,30 @@ $vacancy = get_field('jobs_vacancy');
                 </div>
             </div>
             <div class="jobs-content multiple-jobs">
-                <?php 
-                    $count = 0;
-                    foreach( $vacancy as $item ):
-                    $vacancy = $item['vacancy'];
-                    $title = $item['title'];
-                    $count++;
+                <?php
+                global $post;
+                $args = array( 'post_type' => 'jobs', 'posts_per_page' => 10, 'order' => 'ASC' );
+                $the_query = new WP_Query( $args );
+                $count = 0;
                 ?>
-                    <div class="jobs-item col-4">
-                        <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
-                        <p><?php echo $vacancy; ?></p>
-                        <h4><?php echo $title; ?></h4>
-                        <?php if($count == 2 || $count == 4 || $count == 6): ?>
-                           <div class="jobs-item-plus"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g id="button_view_project" data-name="button view project" transform="translate(-931 -769)"><rect id="bg" width="50" height="50" rx="20" transform="translate(931 769)" fill="#fff"/><path id="view" d="M955,802v-7h-7v-2h7v-7h2v7h7v2h-7v7Z"/></g></svg></div>
-                        <?php endif ?>
-                    </div>
-                <?php endforeach ?>
+                <?php if ( $the_query->have_posts() ) : ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="jobs-item col-4 <?php if(!($count % 2)){echo 'central-item';} ?>">
+                            <?php
+                            $post_vacancy = get_field( 'jobs_post_vacancy', $post->ID );
+                            $post_image = get_field( 'jobs_post_image', $post->ID );
+                            $count++;
+                            ?>
+                            <?php echo '<img src="'.esc_url($post_image['url']).'" alt="'.esc_attr($post_image['alt']).'">'; ?>
+                            <p><?php echo $post_vacancy; ?></p>
+                            <h4><?php the_title(); ?></h4>
+                            <?php if(!($count % 2)): ?>
+                                <div class="jobs-item-plus"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g id="button_view_project" data-name="button view project" transform="translate(-931 -769)"><rect id="bg" width="50" height="50" rx="20" transform="translate(931 769)" fill="#fff"/><path id="view" d="M955,802v-7h-7v-2h7v-7h2v7h7v2h-7v7Z"/></g></svg></div>
+                            <?php endif ?>
+                        </div>
+                    <?php endwhile ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </blockquote>
