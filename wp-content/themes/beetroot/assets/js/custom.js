@@ -1,19 +1,26 @@
+mobileMenu();
+
+function mobileMenu() {
+
+    let el = document.querySelector('.menu-toggle')
+    if (el) {
+        el.addEventListener('click', function() {
+            document.querySelector('.menu-mobile-wrap').classList.toggle('active');
+        });
+
+        let remove = document.querySelector('.menu-remove')
+        remove.addEventListener('click', function() {
+            document.querySelector('.menu-mobile-wrap').classList.toggle('active');
+        });
+    }
+}
+
 (function($) {
-    //Hover of the active section in the menu
-    $(window).scroll(function() {
-        var $sections = $('section');
-        $sections.each(function(i, el) {
-            var id = $(el).attr('id');
-            // if (scroll > top && scroll < bottom) {
-            //     console.log(id);
-            // }
-        })
-    });
 
     $(document).ready(function() {
         $('#fullpage').fullpage({
             anchors: ['home', 'about', 'jobs', 'teams'],
-            menu: '#main_menu',
+            menu: '.menu',
             loopTop: true,
             loopBottom: true
         });
@@ -29,6 +36,7 @@
         infinite: false,
         useTransform: true,
         speed: 400,
+
     });
 
     //Slick settings
@@ -44,25 +52,25 @@
             infinite: false,
             prevArrow: '.jobs_prev',
             nextArrow: '.jobs_next',
-            // responsive: [{
-            //     breakpoint: 1024,
-            //     settings: {
-            //         slidesToShow: 5,
-            //         slidesToScroll: 5,
-            //     }
-            // }, {
-            //     breakpoint: 640,
-            //     settings: {
-            //         slidesToShow: 4,
-            //         slidesToScroll: 4,
-            //     }
-            // }, {
-            //     breakpoint: 420,
-            //     settings: {
-            //         slidesToShow: 3,
-            //         slidesToScroll: 3,
-            //     }
-            // }]
+            responsive: [{
+                //     breakpoint: 1024,
+                //     settings: {
+                //         slidesToShow: 5,
+                //         slidesToScroll: 5,
+                //     }
+                // }, {
+                //     breakpoint: 640,
+                //     settings: {
+                //         slidesToShow: 4,
+                //         slidesToScroll: 4,
+                //     }
+                // }, {
+                breakpoint: 420,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }]
         });
 
     $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
@@ -85,6 +93,19 @@
         slidesToScroll: 3,
         prevArrow: '.arrow_prev_t',
         nextArrow: '.arrow_next_t',
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 420,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }]
     });
 
     // Popup Job

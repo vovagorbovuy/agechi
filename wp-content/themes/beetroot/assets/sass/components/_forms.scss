@@ -7,23 +7,10 @@
     width: 100%;
     height: 100vh;
     background-color: $pink;
-    .modal-header {
+    &-header {
         margin-top: 60px;
         display: flex;
         justify-content: space-between;
-        .close,
-        .close-job {
-            padding: 18px 20px 15px;
-            border: 1px solid $grey;
-            border-radius: 22px;
-            transition: all .3s;
-            cursor: pointer;
-            &:hover {
-                path {
-                    fill: $orange;
-                }
-            }
-        }
     }
 }
 
@@ -209,7 +196,7 @@
 }
 
 .wpcf7 {
-    .wpcf7-form {
+    &-form {
         p {
             margin: unset;
         }

@@ -1,5 +1,9 @@
 .about {
-    .about-blockquote {
+    &-blockquote {
+        padding-top: 18vh;
+        @media all and (max-width: 768px) {
+            padding-top: 5vh;
+        }
         .blurball,
         .green-line,
         .line-green-ball {
@@ -8,21 +12,45 @@
         .blurball {
             right: 200px;
             top: -140px;
+            @media all and (max-width: 768px) {
+                width: 50%;
+                right: 0;
+                top: -75px;
+            }
         }
         .green-line {
             right: -60px;
             bottom: -125px;
+            @media all and (max-width: 768px) {
+                right: -130px;
+                bottom: -50px;
+                width: 70%;
+            }
         }
         .line-green-ball {
             bottom: -260px;
             left: 270px;
+            @media all and (max-width: 768px) {
+                display: none;
+            }
         }
         .container {
             .about-content {
                 display: flex;
                 padding-top: 0vh;
+                @media all and (max-width: 768px) {
+                    flex-wrap: wrap;
+                }
+                .about-title {
+                    h4 {
+                        margin: 5vh 0 15px;
+                    }
+                }
                 .description>* {
                     max-width: 496px;
+                }
+                h2 {
+                    margin: 0 0 10px;
                 }
                 h3,
                 p {
@@ -30,36 +58,64 @@
                     line-height: 30px;
                     color: $d-grey;
                     margin: 17px 0;
+                    @media all and (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin: 2px 0;
+                    }
                 }
                 .partners {
                     padding-top: 29px;
                     display: flex;
+                    @media all and (max-width: 768px) {
+                        padding-top: 15px;
+                    }
                     p {
                         font-size: 14px;
                         font-weight: 500;
                         max-width: 135px;
                         line-height: 16px;
                         margin: 0 70px 0 0;
+                        @media all and (max-width: 768px) {
+                            margin: 0 20px 0 0;
+                        }
                     }
                     .partners-items {
                         display: flex;
                         gap: 28px;
+                        @media all and (max-width: 768px) {
+                            gap: 5px;
+                        }
                     }
                 }
                 .solutions {
-                    .solutions-item {
+                    h4 {
+                        margin: 15px 0;
+                    }
+                    &-item {
                         display: flex;
                         align-items: center;
                         gap: 20px;
                         margin-bottom: 44px;
+                        @media all and (max-width: 768px) {
+                            gap: 5px;
+                            margin-bottom: 5px;
+                        }
                         img {
                             width: 48px;
                             height: 48px;
+                            @media all and (max-width: 768px) {
+                                width: 24px;
+                                height: 24px;
+                            }
                         }
                         p {
                             font-size: 16px;
                             color: $violet;
                             font-weight: 600;
+                            @media all and (max-width: 768px) {
+                                font-size: 14px;
+                            }
                         }
                     }
                 }

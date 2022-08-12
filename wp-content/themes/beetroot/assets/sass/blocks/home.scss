@@ -1,5 +1,6 @@
 .home {
-    .home-blockquote {
+    &-blockquote {
+        padding-top: 28vh;
         .home-content {
             max-width: 840px;
             margin: auto;
@@ -8,8 +9,12 @@
             h1 {
                 z-index: 4;
                 max-width: 840px;
-                margin: -10vh 0 0 0;
+                margin: 0;
                 position: relative;
+                margin: auto;
+                @media all and (max-width: 768px) {
+                    max-width: 300px;
+                }
             }
             .snake,
             .blurball,
@@ -25,6 +30,9 @@
                 left: -600px;
                 width: 855px;
                 height: 400px;
+                @media all and (max-width: 768px) {
+                    display: none;
+                }
             }
             .yellowball {
                 top: 185px;
@@ -32,6 +40,9 @@
                 z-index: 7;
                 width: 480px;
                 height: 480px;
+                @media all and (max-width: 768px) {
+                    display: none;
+                }
             }
             .blurball {
                 z-index: 3;
@@ -39,16 +50,29 @@
                 height: 458px;
                 right: -225px;
                 top: -165px;
+                @media all and (max-width: 768px) {
+                    width: 50%;
+                    height: auto;
+                    right: 0;
+                }
             }
             .figures {
                 z-index: 3;
                 right: -300px;
+                @media all and (max-width: 768px) {
+                    top: 40vh;
+                    left: 6vh;
+                }
             }
             p {
                 max-width: 484px;
                 margin: auto;
                 position: relative;
                 z-index: 7;
+                @media all and (max-width: 768px) {
+                    margin-top: 10px;
+                    max-width: 300px;
+                }
             }
         }
     }

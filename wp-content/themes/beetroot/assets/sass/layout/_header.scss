@@ -7,8 +7,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media all and (max-width: 768px) {
+        top: 20px;
+    }
     .header-logo {
-        min-width: 356px;
+        @media all and (max-width: 768px) {
+            svg, img {
+                max-width: 80px;
+            }
+        }
+    }
+    .menu-mobile {
+        text-align: right;
     }
     .menu {
         display: flex;
@@ -36,9 +46,69 @@
             }
         }
     }
+    .menu-mobile-wrap {
+        text-align: center;
+        width: 60%;
+        position: fixed;
+        z-index: 1035;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+        opacity: 0;
+        z-index: -1;
+        padding: 22px 16px 26px;
+        &:not(.active) {
+            height: 0px;
+        }
+        &.active {
+            opacity: 1;
+            z-index: 1;
+            background: #fcf2f0fa;
+            border-radius: 0 0 0 20px;
+            box-shadow: 8px 1px 20px $orange;
+        }
+        .mobile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: -webkit-right;
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            .menu {
+                text-align: center;
+                display: block;
+                padding: 0;
+                margin: 0;
+                li {
+                    margin-left: 0;
+                    padding: 10px 0;
+                    display: block;
+                    position: relative;
+                }
+            }
+            .header-lan {
+                min-width: unset;
+                gap: unset;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 5px;
+                gap: 5px;
+                .info-copyright {
+                    text-align: center;
+                    p {
+                        font-size: 11px;
+                        line-height: 11px;
+                    }
+                }
+            }
+        }
+    }
     .header-lan {
         display: flex;
         align-items: flex-end;
+        justify-content: flex-end;
         gap: 50px;
         min-width: 356px;
         ul {

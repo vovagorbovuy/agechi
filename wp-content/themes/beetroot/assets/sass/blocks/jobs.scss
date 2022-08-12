@@ -2,7 +2,11 @@
     background: url('../img/line-decoration.svg') no-repeat;
     background-size: auto;
     background-position-y: center;
-    .jobs-blockquote {
+    &-blockquote {
+        padding-top: 10vh;
+        @media all and (max-width: 768px) {
+            padding-top: 7vh;
+        }
         .jobs-title {
             display: flex;
             justify-content: space-between;
@@ -15,6 +19,9 @@
                     cursor: pointer;
                     transition: all .3s;
                     text-align: center;
+                    @media all and (max-width: 768px) {
+                        margin-top: 3vh;
+                    }
                     p {
                         color: $orange;
                         font-size: 14px;
@@ -28,7 +35,7 @@
                         margin-top: 10px;
                         margin-bottom: 24px;
                     }
-                    .jobs-item-plus {
+                    &-plus {
                         svg {
                             cursor: pointer;
                         }

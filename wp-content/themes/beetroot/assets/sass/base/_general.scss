@@ -7,16 +7,21 @@ body {
         overflow: hidden;
         position: relative;
     }
+    .fp-tableCell {
+        vertical-align: unset;
+    }
 }
 
 blockquote {
     margin: 0;
-    padding-top: 9vh;
 }
 
 .container {
     margin: 0 auto;
     padding: 0 80px;
+    @media all and (max-width: 768px) {
+        padding: 0 16px;
+    }
 }
 
 .col-1 {
@@ -45,6 +50,23 @@ blockquote {
 
 .col-7 {
     flex-basis: 50%;
+}
+
+.col-12 {
+    flex-basis: 100%;
+}
+
+@media all and (max-width: 768px) {
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-12 {
+        flex-basis: 100%;
+    }
 }
 
 h1,

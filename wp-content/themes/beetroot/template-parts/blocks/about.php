@@ -35,7 +35,7 @@ $solutions_items = get_field('about_solutions_items');
         <img class="line-green-ball" src="<?= get_template_directory_uri(); ?>/assets/img/line-green-ball.png" alt="line-green-ball.png" />
         <div class="container">
             <div class="about-content">
-                <div class="col-2">
+                <div class="about-title col-2">
                     <?php if($title): ?>
                         <h4><?php echo $title; ?></h4>
                     <?php endif ?>

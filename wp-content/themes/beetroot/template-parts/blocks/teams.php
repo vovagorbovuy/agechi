@@ -27,7 +27,7 @@ $teams = get_field('teams_rpt');
     <blockquote class="teams-blockquote">
         <div class="container">
             <div class="teams-title">
-                <?php if($post_complate): ?>
+                <?php if($title): ?>
                     <h3><?php echo $title; ?></h3>
                 <?php endif ?>
                 <div class="control-panel">
