@@ -1,25 +1,9 @@
-//Hiding the anchor in the url
-// const anchors = document.querySelectorAll('a[href*="#"]')
-
-// for (let anchor of anchors) {
-//     anchor.addEventListener('click', function(e) {
-//         e.preventDefault()
-
-//         const blockID = anchor.getAttribute('href').substr(1)
-
-//         document.getElementById(blockID).scrollIntoView({
-//             behavior: 'smooth',
-//             block: 'start'
-//         })
-//     })
-// }
 (function($) {
     //Hover of the active section in the menu
     $(window).scroll(function() {
         var $sections = $('section');
         $sections.each(function(i, el) {
             var id = $(el).attr('id');
-            console.log(id);
             // if (scroll > top && scroll < bottom) {
             //     console.log(id);
             // }
@@ -35,28 +19,65 @@
         });
     });
 
-    //Slick
-    $('.slider-for').slick({
+    $('.slider-single').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
+        prevArrow: '.job_prev',
+        nextArrow: '.job_next',
+        fade: false,
+        adaptiveHeight: true,
+        infinite: false,
+        useTransform: true,
+        speed: 400,
     });
-    $('.multiple-jobs').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: '.arrow_prev',
-        nextArrow: '.arrow_next',
-        // asNavFor: '.slider-for',
+
+    //Slick settings
+    $('.slider-nav')
+        .on('init', function(event, slick) {
+            $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+        })
+        .slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            focusOnSelect: false,
+            infinite: false,
+            prevArrow: '.jobs_prev',
+            nextArrow: '.jobs_next',
+            // responsive: [{
+            //     breakpoint: 1024,
+            //     settings: {
+            //         slidesToShow: 5,
+            //         slidesToScroll: 5,
+            //     }
+            // }, {
+            //     breakpoint: 640,
+            //     settings: {
+            //         slidesToShow: 4,
+            //         slidesToScroll: 4,
+            //     }
+            // }, {
+            //     breakpoint: 420,
+            //     settings: {
+            //         slidesToShow: 3,
+            //         slidesToScroll: 3,
+            //     }
+            // }]
+        });
+
+    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+        $('.slider-nav').slick('slickGoTo', currentSlide);
+        var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+        $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+        $(currrentNavSlideElem).addClass('is-active');
     });
-    // $('.multiple-jobs').slick({
-    //     infinite: false,
-    //     slidesToShow: 3,
-    //     slidesToScroll: 3,
-    //     prevArrow: '.arrow_prev',
-    //     nextArrow: '.arrow_next',
-    // });
+
+    $('.slider-nav').on('click', '.slick-slide', function(event) {
+        event.preventDefault();
+        var goToSingleSlide = $(this).data('slick-index');
+
+        $('.slider-single').slick('slickGoTo', goToSingleSlide);
+    });
 
     $('.multiple-teams').slick({
         infinite: false,
@@ -66,8 +87,24 @@
         nextArrow: '.arrow_next_t',
     });
 
-    // Popup
-    var modal = document.getElementById("myModal");
+    // Popup Job
+    var modalJob = document.getElementById("modalJob");
+    var spanJob = document.getElementsByClassName("close-job")[0];
+    $('.jobs-item').on("click", function() {
+        $('#modalJob').css('display', 'block');
+        $('#jobs-post').get(0).slick.setPosition()
+    });
+    spanJob.onclick = function() {
+        modalJob.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modalJob) {
+            modalJob.style.display = "none";
+        }
+    }
+
+    // Popup Get in touch
+    var modal = document.getElementById("modalTouch");
     var btn = document.getElementById("touch");
     var span = document.getElementsByClassName("close")[0];
     btn.onclick = function() {

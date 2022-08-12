@@ -17,6 +17,7 @@ function beetroot_enqueue_scripts() {
 	wp_enqueue_script('jquery', false, false, true);
 	wp_register_script( 'slick', get_template_directory_uri() . '/dist/vendor/js/slick.min.js', array('jquery'), '1.0.0', true );
 	wp_register_script( 'fullpage', get_template_directory_uri() . '/dist/vendor/js/jquery.fullpage.min.js', array('slick'), '1.0.0', true );
+	// wp_register_script( 'fullpage-map', get_template_directory_uri() . '/dist/vendor/js/jquery.fullpage.min.js.map', array('fullpage'), '1.0.0', true );
 	wp_register_script( 'theme-js', get_template_directory_uri() . '/dist/js/custom.min.js', array('fullpage'), '1.0.0', true );
 	wp_enqueue_script( 'theme-js' );
 }
@@ -36,11 +37,16 @@ add_action('init', function() {
 	pll_register_string('beetroot', 'Get in touch');
     pll_register_string('beetroot', 'Email:');
 	pll_register_string('beetroot', 'Stay connected With Us');
-    pll_register_string('beetroot', '©Copyright 2020. Made by moontheme');
+    pll_register_string('beetroot', 'NEXT<br>PROJECT');
+	pll_register_string('beetroot', '©Copyright 2020. Made by moontheme');
 	pll_register_string('beetroot', 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida risus commodos');
+	pll_register_string('beetroot', 'Start:');
+	pll_register_string('beetroot', 'Complate:');
+	pll_register_string('beetroot', 'Location:');
+	pll_register_string('beetroot', 'Services:');
   });
 
-// New allowed mime types.
+/* -- New allowed mime types -- */
 add_filter( 'upload_mimes', 'my_custom_mime_types' );
 function my_custom_mime_types( $mimes ) {
 $mimes['svg'] = 'image/svg+xml';
@@ -50,7 +56,7 @@ unset( $mimes['exe'] );
 return $mimes;
 }
 
-//ACF bug fix (blocks)
+/* -- ACF bug fix (blocks) -- */
 add_filter( 'block_editor_rest_api_preload_paths', 'acf_filter_rest_api_preload_paths', 10, 1 );
 function acf_filter_rest_api_preload_paths( $preload_paths ) {
 	global $post;
@@ -68,33 +74,16 @@ function acf_filter_rest_api_preload_paths( $preload_paths ) {
 	);
 }
 
+/* -- Fullpage.js nav menu -- */
 add_filter( 'nav_menu_link_attributes', 'add_data_atts_to_nav', 10, 4 );
     function add_data_atts_to_nav( $atts, $item, $args ) {
     $atts['data-menuanchor'] = strtolower(str_replace("#","",$item->url));
     return $atts;
 }
 
-// function beetroot_custom_post_type() {
-//     register_post_type('beetroot_jobs',
-//         array(
-//             'labels'      => array(
-//                 'name'          => __('jobs', 'textdomain'),
-//                 'singular_name' => __('Job', 'textdomain'),
-//             ),
-//                 'public'      => true,
-//                 'has_archive' => true,
-// 				'menu_icon'           => 'dashicons-nametag',
-//         )
-//     );
-// }
-// add_action('init', 'beetroot_custom_post_type');
-
-
+/* -- Post Type: Jobs -- */
+add_action( 'init', 'beetroot_register_post_types' );
 function beetroot_register_post_types() {
-	/**
-	 * Post Type: Jobs.
-	 */
-
 	$labels = [
 		"name" => __( "Jobs", "beetroot" ),
 		"singular_name" => __( "Vacancies", "beetroot" ),
@@ -126,5 +115,3 @@ function beetroot_register_post_types() {
 
 	register_post_type( "jobs", $args );
 }
-
-add_action( 'init', 'beetroot_register_post_types' );

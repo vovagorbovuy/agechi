@@ -29,9 +29,13 @@ $subtitle = get_field('home-subtitle');
             <div class="home-content">
                 <img class="snake" src="<?= get_template_directory_uri(); ?>/assets/img/snake.png" alt="snake.png" />
                 <img class="yellowball" src="<?= get_template_directory_uri(); ?>/assets/img/yellowball.png" alt="yellowball.png" />
-                <h1><?php echo $title; ?></h1>
+                <?php if($title): ?>    
+                    <h1><?php echo $title; ?></h1>
+                <?php endif ?>
                 <img class="blurball" src="<?= get_template_directory_uri(); ?>/assets/img/blurball.png" alt="blurball.png" />
-                <p><?php echo $subtitle; ?></p>
+                <?php if($title): ?>    
+                    <p><?php echo $subtitle; ?></p>
+                <?php endif ?>
                 <img class="figures" src="<?= get_template_directory_uri(); ?>/assets/img/figures.png" alt="figures.png" />
             </div>
         </div>

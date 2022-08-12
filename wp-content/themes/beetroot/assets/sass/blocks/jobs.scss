@@ -4,30 +4,16 @@
     background-position-y: center;
     .jobs-blockquote {
         .jobs-title {
-            margin-top: 16vh;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .control-panel {
-                display: flex;
-                gap: 30px;
-                .arrow_prev,
-                .arrow_next {
-                    transition: all .3s;
-                    cursor: pointer;
-                    &:hover {
-                        transition: all .3s;
-                        path {
-                            fill: $orange;
-                        }
-                    }
-                }
-            }
         }
         .jobs-content {
             .slick-track {
                 display: flex;
                 .jobs-item {
+                    cursor: pointer;
+                    transition: all .3s;
                     text-align: center;
                     p {
                         color: $orange;
@@ -47,9 +33,12 @@
                             cursor: pointer;
                         }
                     }
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
                 .central-item {
-                    margin-top: 100px;
+                    margin-top: 80px;
                 }
             }
         }

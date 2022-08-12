@@ -7,6 +7,27 @@
     width: 100%;
     height: 100vh;
     background-color: $pink;
+    .modal-header {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        .close,
+        .close-job {
+            padding: 18px 20px 15px;
+            border: 1px solid $grey;
+            border-radius: 22px;
+            transition: all .3s;
+            cursor: pointer;
+            &:hover {
+                path {
+                    fill: $orange;
+                }
+            }
+        }
+    }
+}
+
+.modal-touch {
     .green-lines,
     .yellow-red-ball,
     .blurball {
@@ -24,30 +45,13 @@
         top: -150px;
         left: 350px;
     }
-    .modal-header {
-        margin-top: 60px;
-        display: flex;
-        justify-content: space-between;
-        .close {
-            padding: 18px 20px 15px;
-            border: 1px solid $grey;
-            border-radius: 22px;
-            transition: all .3s;
-            cursor: pointer;
-            &:hover {
-                path {
-                    fill: $orange;
-                }
-            }
-        }
-    }
     .modal-content {
         display: flex;
-        padding-top: 16vh;
         h3 {
             margin: unset;
+            display: flex;
+            padding-top: 16vh;
         }
-        .modal-contact-form {}
         .modal-contact-info {
             .modal-contact-content {
                 width: max-content;
@@ -105,6 +109,102 @@
                 }
             }
         }
+    }
+}
+
+.modal-job {
+    .container {
+        padding: unset;
+    }
+    .modal-header {
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        padding: 0 80px;
+    }
+    .modal-content {
+        .slick-track {
+            display: flex;
+            .slick-slide {
+                display: flex;
+                .job-item,
+                .job-img {
+                    height: 100vh;
+                }
+                .job-img {
+                    width: 45%;
+                    img,
+                    svg {
+                        height: 100%;
+                        max-width: unset;
+                    }
+                }
+                .job-item {
+                    position: relative;
+                    width: 55%;
+                    padding: 18vh 80px 120px 0;
+                    display: flex;
+                    justify-content: flex-end;
+                    .job-content {
+                        max-width: 500px;
+                        margin-right: 80px;
+                        p {
+                            color: $d-grey;
+                            font-size: 15px;
+                            margin: unset;
+                            font-weight: 200;
+                            line-height: 30px;
+                        }
+                        h2 {
+                            color: $violet;
+                            margin: 0 0 18px;
+                        }
+                        .job-vacancy {
+                            font-size: 14px;
+                            color: $orange;
+                        }
+                        .job-info {
+                            display: flex;
+                            gap: 50px;
+                            margin-bottom: 40px;
+                            .job-info-icon {
+                                padding-left: 30px;
+                                .p-title {
+                                    &::after {
+                                        content: '';
+                                        background: url('../img/faq.svg') no-repeat;
+                                        width: 18px;
+                                        height: 18px;
+                                        position: absolute;
+                                        left: -30px;
+                                        top: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .p-title {
+                            position: relative;
+                            color: $dark;
+                            font-weight: 600;
+                            line-height: 14px;
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-footer {
+        position: absolute;
+        bottom: 120px;
+        right: 80px;
+        p {
+            color: $d-grey;
+            font-size: 14px;
+            text-align: right;
+            line-height: unset;
+        }
+        .control-panel {}
     }
 }
 

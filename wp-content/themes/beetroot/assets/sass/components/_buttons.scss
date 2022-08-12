@@ -14,3 +14,19 @@
         background: $orange;
     }
 }
+
+.control-panel {
+    display: flex;
+    gap: 30px;
+    .arrow_prev,
+    .arrow_next {
+        transition: all .3s;
+        cursor: pointer;
+        &:hover {
+            transition: all .3s;
+            path {
+                fill: $orange;
+            }
+        }
+    }
+}

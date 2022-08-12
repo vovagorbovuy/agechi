@@ -25,6 +25,10 @@
 			<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 			<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_dgajiyer.json"  background="transparent"  speed="1"  style="width: 24px; height: 24px;"  loop  autoplay></lottie-player>
 		</div>
+		<!-- modalTouch -->
+		<?php get_template_part('template-parts/popup/touch'); ?>
+        <!-- modalJob -->
+        <?php get_template_part('template-parts/popup/job'); ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

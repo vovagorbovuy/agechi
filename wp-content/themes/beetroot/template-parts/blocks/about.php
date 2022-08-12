@@ -36,37 +36,51 @@ $solutions_items = get_field('about_solutions_items');
         <div class="container">
             <div class="about-content">
                 <div class="col-2">
-                    <h4><?php echo $title; ?></h4>
+                    <?php if($title): ?>
+                        <h4><?php echo $title; ?></h4>
+                    <?php endif ?>
                 </div>
                 <div class="col-5 description">
-                    <h2><?php echo $subtitle; ?></h2>
-                    <?php echo $text; ?>
+                    <?php if($subtitle): ?>
+                        <h2><?php echo $subtitle; ?></h2>
+                    <?php endif ?>
+                    <?php if($text): ?>
+                        <?php echo $text; ?>
+                    <?php endif ?>
                     <div class="partners">
-                        <p><?php echo $partners; ?></p>
+                        <?php if($partners): ?>
+                            <p><?php echo $partners; ?></p>
+                        <?php endif ?>
                         <div class="partners-items">
-                            <?php 
-                                foreach( $partners_rpt as $item ):
-                            ?>
-                                <div class="partners-item">
-                                    <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
-                                </div>
-                            <?php endforeach ?>
+                            <?php if($partners_rpt): ?>
+                                <?php 
+                                    foreach( $partners_rpt as $item ):
+                                ?>
+                                    <div class="partners-item">
+                                        <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
+                                    </div>
+                                <?php endforeach ?>
+                            <?php endif ?>
                         </div>
                     </div>
                 </div>
                 <div class="solutions col-5">
-                    <h4><?php echo $solutions_title; ?></h4>
+                    <?php if($solutions_title): ?>
+                        <h4><?php echo $solutions_title; ?></h4>
+                    <?php endif ?>
                     <div class="solutions-items">
-                        <?php 
-                            foreach( $solutions_items as $item ):
-                            $text = $item['img'];
-                            $title = $item['title'];
-                        ?>
-                            <div class="solutions-item">
-                                <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
-                                <p><?php echo $title; ?></p>
-                            </div>
-                        <?php endforeach ?>
+                        <?php if($solutions_items): ?>
+                            <?php 
+                                foreach( $solutions_items as $item ):
+                                $text = $item['img'];
+                                $title = $item['title'];
+                            ?>
+                                <div class="solutions-item">
+                                    <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
+                                    <p><?php echo $title; ?></p>
+                                </div>
+                            <?php endforeach ?>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
