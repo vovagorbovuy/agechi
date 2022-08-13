@@ -4,8 +4,8 @@
     background-position-y: center;
     &-blockquote {
         padding-top: 10vh;
-        @media all and (max-width: 768px) {
-            padding-top: 7vh;
+        @media screen and (min-width: 1200px) and (max-width: 1440px) {
+            padding-top: 8vh;
         }
         .jobs-title {
             display: flex;
@@ -13,11 +13,17 @@
             align-items: center;
         }
         .jobs-content {
+            margin-top: 9vh;
             .slick-track {
                 display: flex;
+                gap: 50px;
+                @media all and (max-width: 768px) {
+                    gap: unset;
+                }
                 .jobs-item {
                     cursor: pointer;
-                    transition: all .3s;
+                    transition: all .5s;
+                    margin-top: 80px;
                     text-align: center;
                     @media all and (max-width: 768px) {
                         margin-top: 3vh;
@@ -43,9 +49,15 @@
                     &:hover {
                         opacity: 0.8;
                     }
+                    .jobs-item-plus {
+                        display: none;
+                    }
                 }
-                .central-item {
-                    margin-top: 80px;
+                .slick-current {
+                    margin-top: 0;
+                    .jobs-item-plus {
+                        display: block;
+                    }
                 }
             }
         }

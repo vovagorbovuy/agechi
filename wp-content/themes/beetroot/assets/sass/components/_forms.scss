@@ -208,11 +208,11 @@
             margin-top: 5px;
         }
         .wpcf7-response-output {
-            border: unset;
-            position: absolute;
-            margin: 10px 0 0;
-            padding: unset;
-            color: #801515;
+            border: unset !important;
+            position: absolute !important;
+            margin: 10px 0 0 !important;
+            padding: unset !important;
+            color: #801515 !important;
         }
         label {
             position: relative;

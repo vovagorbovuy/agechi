@@ -20,7 +20,6 @@ $className = 'teams';
 
 // Load values and assign defaults.
 $title = get_field('teams_title');
-$teams = get_field('teams_rpt');
 
 ?>
 <section id="<?php echo esc_attr($className); ?>-1" class="<?php echo esc_attr($className); ?> section">
@@ -36,25 +35,45 @@ $teams = get_field('teams_rpt');
                 </div>
             </div>
             <div class="teams-content multiple-teams">
-                <?php if($teams): ?>
-                    <?php 
-                        $count = 0;
-                        foreach( $teams as $item ):
-                        $profession = $item['profession'];
-                        $title = $item['title'];
-                        $textarea = $item['textarea'];
-                        $count++;
-                    ?>
-                        <div class="teams-item col-4" <?php if($count % 2) { echo 'style="margin-top: 80px;"';} ?>>
-                            <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
-                            <p><?php echo $profession; ?></p>
-                            <h4><?php echo $title; ?></h4>
-                            <?php if(!($count % 2)): ?>
-                                <p class="about-team"><?php echo $textarea; ?></p>
+                <?php 
+                global $post;
+                $args = array( 'post_type' => 'teams', 'posts_per_page' => 10, 'order' => 'ASC' );
+                $the_query = new WP_Query( $args );
+                ?>
+                <?php if ( $the_query->have_posts() ) : ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                        <div class="teams-item col-4">
+                            <?php
+                            $post_vacancy = get_field( 'teams_post_vacancy', $post->ID );
+                            $post_image = get_field( 'teams_post_image', $post->ID );
+                            $post_text = get_field( 'teams_post_text', $post->ID );
+                            $post_social_links = get_field( 'teams_post_social_links', $post->ID );
+                            ?>
+                            <?php if($post_image): ?>
+                                <?php echo '<img src="'.esc_url($post_image['url']).'" alt="'.esc_attr($post_image['alt']).'">'; ?>
+                            <?php endif; ?>
+                            <?php if($post_vacancy): ?>
+                                <p><?php echo $post_vacancy; ?></p>
+                            <?php endif; ?>
+                            <h4><?php the_title(); ?></h4>
+                            <?php if($post_text): ?>
+                                <p class="item-about"><?php echo $post_text; ?></p>
+                            <?php endif ?>
+                            <?php if($post_social_links): ?>
+                                <div class="item-social-links">
+                                    <?php foreach ($post_social_links as $item): ?>
+                                        <?php
+                                        $link = $item['link'];
+                                        $svg = file_get_contents($item['img']['url']);
+                                        ?>
+                                        <a href="<?= $link; ?>" target="_blank"><?= $svg; ?></a>
+                                    <?php endforeach ?>
+                                </div>
                             <?php endif ?>
                         </div>
-                    <?php endforeach ?>
-                <?php endif ?>
+                    <?php endwhile ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </blockquote>

@@ -46,9 +46,10 @@ function mobileMenu() {
         })
         .slick({
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             dots: false,
-            focusOnSelect: false,
+            centerMode: true,
+            focusOnSelect: true,
             infinite: false,
             prevArrow: '.jobs_prev',
             nextArrow: '.jobs_next',
@@ -87,12 +88,16 @@ function mobileMenu() {
         $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
 
+    $('.slider-nav').slick('slickGoTo', 1);
+
     $('.multiple-teams').slick({
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         prevArrow: '.arrow_prev_t',
         nextArrow: '.arrow_next_t',
+        centerMode: true,
+        focusOnSelect: true,
         responsive: [{
             breakpoint: 768,
             settings: {
@@ -104,9 +109,11 @@ function mobileMenu() {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
+
             }
         }]
     });
+    $('.multiple-teams').slick('slickGoTo', 1);
 
     // Popup Job
     var modalJob = document.getElementById("modalJob");

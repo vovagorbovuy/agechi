@@ -1,6 +1,9 @@
 .home {
     &-blockquote {
         padding-top: 28vh;
+        @media screen and (min-width: 1200px) and (max-width: 1440px) {
+            padding-top: 18vh;
+        }
         .home-content {
             max-width: 840px;
             margin: auto;
@@ -62,6 +65,9 @@
                 @media all and (max-width: 768px) {
                     top: 40vh;
                     left: 6vh;
+                }
+                @media screen and (min-width: 1200px) and (max-width: 1440px) {
+                    right: -200px;
                 }
             }
             p {

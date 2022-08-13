@@ -81,7 +81,7 @@ add_filter( 'nav_menu_link_attributes', 'add_data_atts_to_nav', 10, 4 );
     return $atts;
 }
 
-/* -- Post Type: Jobs -- */
+/* -- Custom Post Type: -- */
 add_action( 'init', 'beetroot_register_post_types' );
 function beetroot_register_post_types() {
 	$labels = [
@@ -114,4 +114,35 @@ function beetroot_register_post_types() {
 	];
 
 	register_post_type( "jobs", $args );
+
+	$labels = [
+		"name" => __( "Teams", "beetroot" ),
+		"singular_name" => __( "Teams", "beetroot" ),
+	];
+
+	$args = [
+		"label" => __( "Teams", "beetroot" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+
+		"has_archive" => false,
+		'menu_icon' => 'dashicons-groups',
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "teams", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "thumbnail" ],
+	];
+
+	register_post_type( "teams", $args );
 }

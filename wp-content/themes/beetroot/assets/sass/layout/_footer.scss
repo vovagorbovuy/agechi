@@ -5,6 +5,9 @@
     left: 0;
     right: 0;
     display: flex;
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        bottom: 30px;
+    }
     // @media all and (max-width: 768px) {
     //     bottom: 20px;
     // }
