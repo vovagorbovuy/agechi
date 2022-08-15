@@ -63,8 +63,8 @@
         }
     }
     .navigation {
-        text-align: right;
-        text-align: -webkit-right;
+        display: flex;
+        justify-content: flex-end;
         @media all and (max-width: 768px) {
             display: none;
         }

@@ -28,10 +28,10 @@
 					<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_dgajiyer.json"  background="transparent"  speed="1"  style="width: 24px; height: 24px;"  loop  autoplay></lottie-player>
 				</div>
 				<ul id="main_menu" class="menu">
-					<li class="menu-item"><a href="#about" data-menuanchor="home" class="active"><h2>02</h2><p>About</p></a></li>
-					<li class="menu-item"><a href="#jobs" data-menuanchor="about"><h2>03</h2><p>Jobs</p></a></li>
-					<li class="menu-item"><a href="#teams" data-menuanchor="jobs" class=""><h2>04</h2><p>Teams</p></a></li>
-					<li class="menu-item"><a href="#home" data-menuanchor="teams" class=""><h2>01</h2><p>Home</p></a></li>
+					<li class="menu-item"><a href="#about" data-menuanchor="home" class="active"><h2>02</h2><p><?php pll_e('About'); ?></p></a></li>
+					<li class="menu-item"><a href="#jobs" data-menuanchor="about"><h2>03</h2><p><?php pll_e('Jobs'); ?></p></a></li>
+					<li class="menu-item"><a href="#teams" data-menuanchor="jobs" class=""><h2>04</h2><p><?php pll_e('Teams'); ?></p></a></li>
+					<li class="menu-item"><a href="#home" data-menuanchor="teams" class=""><h2>01</h2><p><?php pll_e('Home'); ?></p></a></li>
 				</ul>
 			</div>
 		</div>

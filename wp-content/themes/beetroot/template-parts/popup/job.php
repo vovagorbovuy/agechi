@@ -54,7 +54,7 @@
                                                 <?php endif; ?>
                                             </div>
                                             <?php if($post_complate): ?>
-                                                <div>
+                                                <div class="complate">
                                                     <p class="p-title"><?php pll_e('Complate:'); ?></p>
                                                     <p><?php echo $post_complate; ?></p>
                                                 </div>

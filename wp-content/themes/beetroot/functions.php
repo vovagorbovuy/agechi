@@ -44,6 +44,10 @@ add_action('init', function() {
 	pll_register_string('beetroot', 'Complate:');
 	pll_register_string('beetroot', 'Location:');
 	pll_register_string('beetroot', 'Services:');
+	pll_register_string('beetroot', 'About');
+	pll_register_string('beetroot', 'Jobs');
+	pll_register_string('beetroot', 'Teams');
+	pll_register_string('beetroot', 'Home');
   });
 
 /* -- New allowed mime types -- */

@@ -40,6 +40,7 @@
 }
 
 .close,
+.close-touch,
 .close-job,
 .menu-open {
     padding: 18px 20px 15px;
@@ -48,6 +49,7 @@
     width: max-content;
     cursor: pointer;
     background: transparent;
+    height: max-content;
     svg {
         width: 13px;
         height: 13px;

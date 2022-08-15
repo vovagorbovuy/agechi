@@ -14,6 +14,9 @@
         }
         .jobs-content {
             margin-top: 9vh;
+            @media screen and (min-width: 1200px) and (max-width: 1440px) {
+                margin-top: 0;
+            }
             .slick-track {
                 display: flex;
                 gap: 50px;

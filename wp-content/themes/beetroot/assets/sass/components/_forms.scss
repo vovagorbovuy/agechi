@@ -7,10 +7,21 @@
     width: 100%;
     height: 100vh;
     background-color: $pink;
-    &-header {
+    &-header,
+    .modal-header {
         margin-top: 60px;
         display: flex;
         justify-content: space-between;
+        @media all and (max-width: 768px) {
+            margin-top: 20px;
+        }
+        @media all and (max-width: 768px) {
+            .header-logo {
+                svg {
+                    max-width: 80px;
+                }
+            }
+        }
     }
 }
 
@@ -23,6 +34,9 @@
     .green-lines {
         top: 20vh;
         right: -350px;
+        @media all and (max-width: 768px) {
+            display: none;
+        }
     }
     .yellow-red-ball {
         bottom: -220px;
@@ -31,24 +45,43 @@
     .blurball {
         top: -150px;
         left: 350px;
+        @media all and (max-width: 768px) {
+            display: none;
+        }
     }
     .modal-content {
         display: flex;
+        @media all and (max-width: 768px) {
+            flex-wrap: wrap;
+        }
         h3 {
             margin: unset;
             display: flex;
             padding-top: 16vh;
+            @media all and (max-width: 768px) {
+                padding-top: 3vh;
+            }
         }
         .modal-contact-info {
             .modal-contact-content {
                 width: max-content;
                 margin: auto;
+                @media all and (max-width: 768px) {
+                    margin: unset;
+                }
                 h3 {
                     margin-bottom: 50px;
+                    @media all and (max-width: 768px) {
+                        margin-bottom: unset;
+                    }
                 }
                 p {
                     font-size: 16px;
                     line-height: 18px;
+                    @media all and (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 16px;
+                    }
                 }
                 .modal-tel {
                     color: $dark;
@@ -66,6 +99,10 @@
                         font-weight: bold;
                         color: $orange;
                         transition: all .3s;
+                        @media all and (max-width: 768px) {
+                            font-size: 18px;
+                            line-height: 20px;
+                        }
                         &:hover {
                             opacity: 0.7;
                         }
@@ -75,10 +112,17 @@
                     margin-top: 50px;
                     display: flex;
                     gap: 14px;
+                    @media all and (max-width: 768px) {
+                        margin-top: 20px;
+                        gap: 17px;
+                    }
                     .social-item {
                         a {
                             display: inline-block;
                             padding: 16px 17px 14px;
+                            @media all and (max-width: 768px) {
+                                padding: 10px 11px 8px;
+                            }
                             background: $white;
                             border-radius: 20px;
                             transition: all .3s;
@@ -108,18 +152,33 @@
         width: 100%;
         z-index: 99;
         padding: 0 80px;
+        @media all and (max-width: 768px) {
+            padding: 0 16px;
+        }
     }
     .modal-content {
+        @media all and (max-width: 768px) {
+            padding: 0 16px;
+        }
         .slick-track {
             display: flex;
             .slick-slide {
                 display: flex;
+                @media all and (max-width: 768px) {
+                    margin: 0 16px;
+                }
                 .job-item,
                 .job-img {
                     height: 100vh;
+                    @media all and (max-width: 768px) {
+                        display: none;
+                    }
                 }
                 .job-img {
                     width: 45%;
+                    @media all and (max-width: 768px) {
+                        width: 100%;
+                    }
                     img,
                     svg {
                         height: 100%;
@@ -132,9 +191,17 @@
                     padding: 18vh 80px 120px 0;
                     display: flex;
                     justify-content: flex-end;
+                    @media all and (max-width: 768px) {
+                        padding: unset;
+                        width: 100%;
+                    }
                     .job-content {
                         max-width: 500px;
                         margin-right: 80px;
+                        @media all and (max-width: 768px) {
+                            margin-right: unset;
+                            margin-top: 10vh;
+                        }
                         p {
                             color: $d-grey;
                             font-size: 15px;
@@ -145,6 +212,9 @@
                         h2 {
                             color: $violet;
                             margin: 0 0 18px;
+                            @media all and (max-width: 768px) {
+                                margin: 0;
+                            }
                         }
                         .job-vacancy {
                             font-size: 14px;
@@ -154,6 +224,11 @@
                             display: flex;
                             gap: 50px;
                             margin-bottom: 40px;
+                            @media all and (max-width: 768px) {
+                                display: block;
+                                gap: unset;
+                                margin-bottom: 20px;
+                            }
                             .job-info-icon {
                                 padding-left: 30px;
                                 .p-title {
@@ -168,6 +243,11 @@
                                     }
                                 }
                             }
+                            @media all and (max-width: 768px) {
+                                .complate {
+                                    padding-left: 30px;
+                                }
+                            }
                         }
                         .p-title {
                             position: relative;
@@ -175,6 +255,9 @@
                             font-weight: 600;
                             line-height: 14px;
                             margin-top: 30px;
+                            @media all and (max-width: 768px) {
+                                margin-top: 20px;
+                            }
                         }
                     }
                 }
@@ -185,13 +268,23 @@
         position: absolute;
         bottom: 120px;
         right: 80px;
+        @media all and (max-width: 768px) {
+            right: 16px;
+            bottom: 20px;
+            .control-panel {
+                display: flex;
+            }
+        }
         p {
             color: $d-grey;
             font-size: 14px;
             text-align: right;
             line-height: unset;
+            @media all and (max-width: 768px) {
+                font-size: 12px;
+                margin: 0 0 7px 0;
+            }
         }
-        .control-panel {}
     }
 }
 
@@ -229,6 +322,9 @@
                 font-weight: normal;
                 font-size: 15px;
                 line-height: 17px;
+                @media all and (max-width: 768px) {
+                    padding: 10px 0;
+                }
                 &:focus-visible {
                     border-color: unset;
                 }
@@ -251,6 +347,9 @@
             line-height: 18px;
             font-style: normal;
             cursor: pointer;
+            @media all and (max-width: 768px) {
+                margin-top: 20px;
+            }
             &:hover {
                 color: $orange;
                 background: transparent;

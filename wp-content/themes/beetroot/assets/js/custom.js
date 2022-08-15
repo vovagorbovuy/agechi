@@ -53,19 +53,8 @@ function mobileMenu() {
             infinite: false,
             prevArrow: '.jobs_prev',
             nextArrow: '.jobs_next',
+            rtl: false,
             responsive: [{
-                //     breakpoint: 1024,
-                //     settings: {
-                //         slidesToShow: 5,
-                //         slidesToScroll: 5,
-                //     }
-                // }, {
-                //     breakpoint: 640,
-                //     settings: {
-                //         slidesToShow: 4,
-                //         slidesToScroll: 4,
-                //     }
-                // }, {
                 breakpoint: 420,
                 settings: {
                     slidesToShow: 1,
@@ -134,7 +123,7 @@ function mobileMenu() {
     // Popup Get in touch
     var modal = document.getElementById("modalTouch");
     var btn = document.getElementById("touch");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close-touch")[0];
     btn.onclick = function() {
         modal.style.display = "block";
     }

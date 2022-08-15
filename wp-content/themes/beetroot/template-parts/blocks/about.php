@@ -55,9 +55,11 @@ $solutions_items = get_field('about_solutions_items');
                             <?php if($partners_rpt): ?>
                                 <?php 
                                     foreach( $partners_rpt as $item ):
+                                        $link = $item['link'];
+								        $svg = file_get_contents($item['img']['url']);
                                 ?>
                                     <div class="partners-item">
-                                        <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>
+                                        <a href="<?= $link; ?>" target="_blank"><?= $svg; ?></a>
                                     </div>
                                 <?php endforeach ?>
                             <?php endif ?>
@@ -74,6 +76,7 @@ $solutions_items = get_field('about_solutions_items');
                                 foreach( $solutions_items as $item ):
                                 $text = $item['img'];
                                 $title = $item['title'];
+                                $svg = file_get_contents($item['img']['url']);
                             ?>
                                 <div class="solutions-item">
                                     <?php echo '<img src="'.esc_url($item['img']['url']).'" alt="'.esc_attr($item['img']['alt']).'">'; ?>

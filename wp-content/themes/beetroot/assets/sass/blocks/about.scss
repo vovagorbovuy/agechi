@@ -33,6 +33,9 @@
             @media all and (max-width: 768px) {
                 display: none;
             }
+            @media screen and (min-width: 1200px) and (max-width: 1440px) {
+                display: none;
+            }
         }
         .container {
             .about-content {
@@ -88,6 +91,15 @@
                         gap: 28px;
                         @media all and (max-width: 768px) {
                             gap: 5px;
+                        }
+                        a {
+                            svg {
+                                &:hover {
+                                    text {
+                                        fill: $orange;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
