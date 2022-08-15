@@ -21,7 +21,8 @@
         }
     }
     .menu-mobile {
-        text-align: right;
+        display: flex;
+        justify-content: flex-end;
     }
     .menu {
         display: flex;
